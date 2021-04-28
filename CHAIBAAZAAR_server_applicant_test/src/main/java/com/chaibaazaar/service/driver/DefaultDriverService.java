@@ -1,6 +1,7 @@
 package com.chaibaazaar.service.driver;
 
 import com.chaibaazaar.dataaccessobject.DriverRepository;
+import com.chaibaazaar.datatransferobject.DriverDTO;
 import com.chaibaazaar.domainobject.DriverDO;
 import com.chaibaazaar.domainvalue.GeoCoordinate;
 import com.chaibaazaar.domainvalue.OnlineStatus;
@@ -110,6 +111,15 @@ public class DefaultDriverService implements DriverService {
     {
         return driverRepository.findById(driverId)
                 .orElseThrow(() -> new EntityNotFoundException("Could not find entity with id: " + driverId));
+    }
+    
+    @Override
+    public List<DriverDTO> findAllDriversByDifferentParam(String keyWord) throws EntityNotFoundException{
+    	List<DriverDTO> listOfDrivers=driverRepository.findAllByDifferentParam(keyWord);
+    	if(listOfDrivers==null) {
+    		throw new EntityNotFoundException("could not find drivers with given keyword:"+ keyWord);
+    	}
+    	return listOfDrivers;
     }
 
 }

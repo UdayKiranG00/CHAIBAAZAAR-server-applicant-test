@@ -26,7 +26,7 @@ public class DriverDO
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long driverId;
 
     @Column(nullable = false)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
@@ -73,13 +73,13 @@ public class DriverDO
 
     public Long getId()
     {
-        return id;
+        return driverId;
     }
 
 
-    public void setId(Long id)
+    public void setId(Long driverId)
     {
-        this.id = id;
+        this.driverId = driverId;
     }
 
 

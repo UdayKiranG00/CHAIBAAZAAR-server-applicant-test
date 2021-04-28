@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class DriverDTO
 {
     @JsonIgnore
-    private Long id;
+    private Long driverId;
 
     @NotNull(message = "Username can not be null!")
     private String username;
@@ -26,9 +26,9 @@ public class DriverDTO
     }
 
 
-    private DriverDTO(Long id, String username, String password, GeoCoordinate coordinate)
+    private DriverDTO(Long driverId, String username, String password, GeoCoordinate coordinate)
     {
-        this.id = id;
+        this.driverId = driverId;
         this.username = username;
         this.password = password;
         this.coordinate = coordinate;
@@ -42,9 +42,9 @@ public class DriverDTO
 
 
     @JsonProperty
-    public Long getId()
+    public Long getdriverId()
     {
-        return id;
+        return driverId;
     }
 
 
@@ -67,15 +67,15 @@ public class DriverDTO
 
     public static class DriverDTOBuilder
     {
-        private Long id;
+        private Long driverId;
         private String username;
         private String password;
         private GeoCoordinate coordinate;
 
 
-        public DriverDTOBuilder setId(Long id)
+        public DriverDTOBuilder setdriverId(Long driverId)
         {
-            this.id = id;
+            this.driverId = driverId;
             return this;
         }
 
@@ -103,7 +103,7 @@ public class DriverDTO
 
         public DriverDTO createDriverDTO()
         {
-            return new DriverDTO(id, username, password, coordinate);
+            return new DriverDTO(driverId, username, password, coordinate);
         }
 
     }

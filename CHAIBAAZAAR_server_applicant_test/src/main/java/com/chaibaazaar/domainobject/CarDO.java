@@ -18,7 +18,7 @@ public class CarDO {
 	
 	@Id
     @GeneratedValue
-    private Long id;
+    private Long carId;
 
     @Column(nullable = false)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
@@ -76,12 +76,12 @@ public class CarDO {
 
 
 	public Long getId() {
-		return id;
+		return carId;
 	}
 
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long carId) {
+		this.carId = carId;
 	}
 
 

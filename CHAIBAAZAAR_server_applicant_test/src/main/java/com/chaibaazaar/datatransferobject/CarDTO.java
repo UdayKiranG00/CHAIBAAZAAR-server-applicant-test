@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class CarDTO {
 
 	@JsonIgnore
-    private Long id;
+    private Long carId;
 	
     @NotNUll(message="license_plate number can not be null")
     private String license_plate;
@@ -31,7 +31,7 @@ public class CarDTO {
     private int rating;
     
     public CarDTO(CarDO carDO) {
-    	this.id=carDO.getId();
+    	this.carId=carDO.getId();
     	this.license_plate=carDO.getLicense_plate();
     	this.seat_count=carDO.getSeat_count();
     	this.convertible=carDO.isConvertible();
@@ -41,11 +41,11 @@ public class CarDTO {
     }
 
 	public Long getId() {
-		return id;
+		return carId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long carId) {
+		this.carId = carId;
 	}
 
 	public String getLicense_plate() {

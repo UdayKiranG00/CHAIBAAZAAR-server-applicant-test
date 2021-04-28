@@ -87,6 +87,9 @@ public class DriverController {
     	carService.deselect(driverId);
     }
     
-    
+    @GetMapping
+    public List<DriverDTO> findAllDriversByDifferentParam(@RequestParam String keyWord) throws EntityNotFoundException{
+    	return driverService.findAllDriversByDifferentParam(keyWord);
+    }
     
 }
